@@ -7,9 +7,11 @@ import {
   Highlight, 
   Image,
   Table,
-  Blockquote,
-  Link
+  Link,
+  Timeline,
+  Badge
 } from '@chakra-ui/react';
+import { LuShieldCheck, LuGraduationCap, LuCrown } from 'react-icons/lu';
 
 function App() {
 
@@ -56,12 +58,10 @@ function App() {
           </Stack>
         </Stack>
 
-        <Heading size="2xl" mb={2}>私について</Heading>
-          <Blockquote.Root mb={4}>
-            <Blockquote.Content>
+        <Heading size="2xl" mb={2}>わたしについて</Heading>
+          <Text mb={4}>
             高校生です。都市工学に興味があります。地理と Golang が好きです。理芽と Chevon をよく聴いています。
-            </Blockquote.Content>
-          </Blockquote.Root>
+          </Text>
 
         <Heading size="lg">🫠 興味・関心</Heading>
         <Table.Root size="sm" mb={"2"}>
@@ -82,7 +82,7 @@ function App() {
           </Table.Root>
 
         <Heading size="lg">🛠️ スキル</Heading>
-        <Table.Root size="sm" mb={"2"}>
+        <Table.Root size="sm" mb={"4"}>
           <Table.Header>
             <Table.Row>
               <Table.ColumnHeader>できること</Table.ColumnHeader>
@@ -99,23 +99,93 @@ function App() {
             </Table.Body>
           </Table.Root>
 
-        <Heading size="lg">🥰 好物</Heading>
-        <Table.Root size="sm" mb={"2"}>
-          <Table.Header>
-            <Table.Row>
-              <Table.ColumnHeader>ジャンル</Table.ColumnHeader>
-              <Table.ColumnHeader>くわしく</Table.ColumnHeader>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            {whatIlove.map((item) => (
-              <Table.Row key={item.id}>
-                <Table.Cell>{item.name}</Table.Cell>
-                <Table.Cell>{item.category}</Table.Cell>
-              </Table.Row>
-            ))}
-            </Table.Body>
-          </Table.Root>
+          <Heading size="lg" mb={"2"}>💪 やったこと</Heading>
+          <Text textStyle={"sm"} mb={4}>
+            なにをしたかまとめていないと自己肯定感すぐ下がるので
+          </Text>
+
+          <Timeline.Root size={"xl"} mb={"4"}>
+            <Timeline.Item>
+              <Timeline.Connector>
+                <Timeline.Separator />
+                  <Timeline.Indicator>
+                    <LuGraduationCap/>
+                  </Timeline.Indicator>
+              </Timeline.Connector>
+              <Timeline.Content>
+                <Timeline.Title>中学校入学</Timeline.Title>
+                <Timeline.Description>April 2023 - March 2026</Timeline.Description>
+              </Timeline.Content>
+            </Timeline.Item>
+            <Timeline.Item>
+              <Timeline.Connector>
+                <Timeline.Separator />
+                  <Timeline.Indicator>
+                    <LuShieldCheck/>
+                  </Timeline.Indicator>
+              </Timeline.Connector>
+              <Timeline.Content>
+                <Timeline.Title>実用英語技能検定 3級 <Badge colorPalette="teal">CEFR-A1</Badge></Timeline.Title>
+                <Timeline.Description>July 2025</Timeline.Description>
+              </Timeline.Content>
+            </Timeline.Item>
+            <Timeline.Item>
+              <Timeline.Connector>
+                <Timeline.Separator />
+                  <Timeline.Indicator>
+                    <LuCrown/>
+                  </Timeline.Indicator>
+              </Timeline.Connector>
+              <Timeline.Content>
+                <Timeline.Title>JOI'25 日本情報オリンピック<Badge colorPalette="blue">2次予選 Bランク</Badge></Timeline.Title>
+                <Timeline.Description>Decenber 2025</Timeline.Description>
+              </Timeline.Content>
+            </Timeline.Item>
+            <Timeline.Item>
+              <Timeline.Connector>
+                <Timeline.Separator />
+                  <Timeline.Indicator>
+                    <LuCrown/>
+                  </Timeline.Indicator>
+              </Timeline.Connector>
+              <Timeline.Content>
+                <Timeline.Title>JGeO'26 科学地理オリンピック日本選手権<Badge colorPalette="blue">1次予選敗退</Badge></Timeline.Title>
+                <Timeline.Description>Decenber 2025</Timeline.Description>
+              </Timeline.Content>
+            </Timeline.Item>
+            <Timeline.Item>
+              <Timeline.Connector>
+              </Timeline.Connector>
+            </Timeline.Item>
+            <Timeline.Item>
+              <Timeline.Connector>
+                <Timeline.Separator />
+                  <Timeline.Indicator>
+                    <LuGraduationCap/>
+                  </Timeline.Indicator>
+              </Timeline.Connector>
+              <Timeline.Content>
+                <Timeline.Title>高等学校入学</Timeline.Title>
+                <Timeline.Description>April 2026 - Now</Timeline.Description>
+              </Timeline.Content>
+            </Timeline.Item>
+            <Timeline.Item>
+              <Timeline.Connector>
+                <Timeline.Separator />
+                  <Timeline.Indicator>
+                    <LuShieldCheck/>
+                  </Timeline.Indicator>
+              </Timeline.Connector>
+              <Timeline.Content>
+                <Timeline.Title>実用英語技能検定 2級 <Badge colorPalette="teal">CEFR-B1</Badge></Timeline.Title>
+                <Timeline.Description>July 2026</Timeline.Description>
+              </Timeline.Content>
+            </Timeline.Item>
+            <Timeline.Item>
+              <Timeline.Connector>
+              </Timeline.Connector>
+            </Timeline.Item>
+          </Timeline.Root>
 
       </Container>
     </Box>
@@ -130,15 +200,9 @@ const whatIwanttoDo = [
 
 const whatIcanDo = [
   { id: 1, name: "🇯🇵 日本語", category: "ネイティブです 一応"},
-  { id: 2, name: "🇬🇧 English", category: "CEFR-B1 (実用英語技能検定2級)"},
+  { id: 2, name: "🇬🇧 English", category: "CEFR-B1 です"},
   { id: 3, name: "プログラミング", category: "Golang が好きです。TypeScript と Dart も書くことがあります"},
   { id: 4, name: "グラフィックデザイン", category: "Inkscape と Affinity が使えます。Adobe のライセンスがほしいです"},
-]
-
-const whatIlove = [
-  { id: 1, name: "趣味", category: "街歩き, 自転車, 登山, ギター (最近はじめました!!)"},
-  { id: 2, name: "音楽アーティスト", category: "Chevon, 理芽, Penthouse, 東京事変 とかよく聴いてます"},
-  { id: 3, name: "フォント", category: "LINE Seed JP と Manrope が好きです"},
 ]
 
 export default App
