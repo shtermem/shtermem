@@ -22,7 +22,7 @@ function App() {
 <Container maxW="container.md" px={{ base: 6, md: 400 }}>
         <Stack align="center" mb={4} textAlign="center">
             <Image
-              src="src/assets/me.jpg"
+              src="/me.jpg"
               boxSize="150px"
               borderRadius="full"
               fit="cover"
