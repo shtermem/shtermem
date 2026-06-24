@@ -6,22 +6,20 @@ import {
   Stack,
   Highlight, 
   Image,
-  Table,
   Link,
   Timeline,
-  Badge
-} from '@chakra-ui/react';
-import { LuShieldCheck, LuGraduationCap, LuCrown } from 'react-icons/lu';
-
+  Badge,
+  List} from '@chakra-ui/react';
+import { LuShieldCheck, LuGraduationCap, LuCrown, LuLanguages, LuSquareCode, LuMusic, LuChefHat, LuMapPin, LuActivity, LuAward, LuBird, LuCat, LuHandshake } from 'react-icons/lu';
 function App() {
 
   return (
     <Box 
-      bgGradient="linear(to-br, gray.900, purple.900)" 
+      bg="linear(to-br, gray.900, purple.900)" 
       color="black"
       py={{ base: 20, md: 28 }}
     >
-<Container maxW="container.md" px={{ base: 6, md: 400 }}>
+      <Container maxW="container.md" px={{ base: 6, md: 400 }}>
         <Stack align="center" mb={4} textAlign="center">
             <Image
               src="/me.jpg"
@@ -33,7 +31,7 @@ function App() {
               borderColor="fg.muted"
             />
           <Heading size="3xl" letterSpacing="tight">
-            <Highlight query="しゅたーめむ" styles={{ color: "teal.600" }}>
+            <Highlight query="しゅたーめむ" styles={{ color: "pink.600" }}>
               しゅたーめむ (@shtermem)
             </Highlight>
           </Heading>
@@ -46,69 +44,83 @@ function App() {
             gap={6} 
             justify="center"
           >
-            <Link href="https://twitter.com/shtermem" target="_blank" rel="noopener noreferrer" color="teal.600" _hover={{ color: "teal.500" }}>
+
+            <Link href="https://twitter.com/shtermem" target="_blank" rel="noopener noreferrer" color="pink.600" _hover={{ color: "pink.600.500" }}>
               Twitter
             </Link>
-            <Link href="https://github.com/shtermem" target="_blank" rel="noopener noreferrer" color="teal.600" _hover={{ color: "teal.500" }}>
+            <Link href="https://github.com/shtermem" target="_blank" rel="noopener noreferrer" color="pink.600" _hover={{ color: "pink.600.500" }}>
               GitHub
             </Link>
-            <Link href="https://misskey.io/@shtermem" target="_blank" rel="noopener noreferrer" color="teal.600" _hover={{ color: "teal.500" }}>
+            <Link href="https://misskey.io/@shtermem" target="_blank" rel="noopener noreferrer" color="pink.600" _hover={{ color: "pink.500" }}>
               ActivityPub
             </Link>
           </Stack>
         </Stack>
 
-        <Heading size="2xl" mb={2}>わたしについて</Heading>
-          <Text mb={4}>
-            高校生です。都市工学に興味があります。地理と Golang が好きです。理芽と Chevon をよく聴いています。
+        <Heading size="2xl" mb={2}>About Me</Heading>
+          <Text mb={4} textStyle={"md"}>
+            高校生です。都市工学に興味があります。<br/>地理と Golang が好きです。理芽と Chevon をよく聴いています。
           </Text>
 
-        <Heading size="lg">🫠 興味・関心</Heading>
-        <Table.Root size="sm" mb={"2"}>
-          <Table.Header>
-            <Table.Row>
-              <Table.ColumnHeader>きになること</Table.ColumnHeader>
-              <Table.ColumnHeader>くわしく</Table.ColumnHeader>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            {whatIwanttoDo.map((item) => (
-              <Table.Row key={item.id}>
-                <Table.Cell>{item.name}</Table.Cell>
-                <Table.Cell>{item.category}</Table.Cell>
-              </Table.Row>
-            ))}
-            </Table.Body>
-          </Table.Root>
+        <Heading size="lg" mb={"2"}>Favorites</Heading>
+        <List.Root gap="2" variant="plain" align="center" mb={"4"}>
+          <List.Item>
+            <List.Indicator asChild color="pink.600">
+              <LuMusic />
+            </List.Indicator>
+            Chevon, 理芽, 笹川真生, Penthouse, 東京事変
+          </List.Item>
+          <List.Item>
+            <List.Indicator asChild color="pink.600">
+              <LuChefHat />
+            </List.Indicator>
+            らーめん, あまいもの, 紅茶, コーヒー
+          </List.Item>
+          <List.Item>
+            <List.Indicator asChild color="pink.600">
+              <LuMapPin />
+            </List.Indicator>
+            自宅のふとん, 札幌, 京都
+          </List.Item>
+          <List.Item>
+            <List.Indicator asChild color="pink.600">
+              <LuActivity />
+            </List.Indicator>
+            自転車, 街歩き, 登山, 旅行, プログラミング (Web)
+          </List.Item>
+          <List.Item>
+            <List.Indicator asChild color="pink.600">
+              <LuAward/>
+            </List.Indicator>
+            北海道日本ハムファイターズ, Los Angeles Angels, VARREL 
+          </List.Item>
+        </List.Root>
 
-        <Heading size="lg">🛠️ スキル</Heading>
-        <Table.Root size="sm" mb={"4"}>
-          <Table.Header>
-            <Table.Row>
-              <Table.ColumnHeader>できること</Table.ColumnHeader>
-              <Table.ColumnHeader>どれくらい</Table.ColumnHeader>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            {whatIcanDo.map((item) => (
-              <Table.Row key={item.id}>
-                <Table.Cell>{item.name}</Table.Cell>
-                <Table.Cell>{item.category}</Table.Cell>
-              </Table.Row>
-            ))}
-            </Table.Body>
-          </Table.Root>
+        <Heading size="lg" mb={"2"}>Skills</Heading>
+        <List.Root gap="2" variant="plain" align="center" mb={"4"}>
+          <List.Item>
+            <List.Indicator asChild color="pink.600">
+              <LuLanguages />
+            </List.Indicator>
+            Japanese <Badge colorPalette="red" ml='1' mr='1'>Native</Badge> , English <Badge colorPalette="blue" ml='1' mr='1'>CEFR-B1</Badge> , Chinese <Badge colorPalette="green" ml='1' mr='1'>Beginner</Badge>
+          </List.Item>
+          <List.Item>
+            <List.Indicator asChild color="pink.600">
+              <LuSquareCode />
+            </List.Indicator>
+            Golang, Dart/Flutter, TypeScript
+          </List.Item>
+        </List.Root>
 
-          <Heading size="lg" mb={"2"}>💪 やったこと</Heading>
+          <Heading size="lg" mb={"2"}>Pasts</Heading>
           <Text textStyle={"sm"} mb={4}>
-            なにをしたかまとめていないと自己肯定感すぐ下がるので
           </Text>
 
           <Timeline.Root size={"xl"} mb={"4"}>
             <Timeline.Item>
-              <Timeline.Connector>
+              <Timeline.Connector >
                 <Timeline.Separator />
-                  <Timeline.Indicator>
+                  <Timeline.Indicator >
                     <LuGraduationCap/>
                   </Timeline.Indicator>
               </Timeline.Connector>
@@ -125,8 +137,8 @@ function App() {
                   </Timeline.Indicator>
               </Timeline.Connector>
               <Timeline.Content>
-                <Timeline.Title>実用英語技能検定 3級 <Badge colorPalette="teal">CEFR-A1</Badge></Timeline.Title>
-                <Timeline.Description>July 2025</Timeline.Description>
+                <Timeline.Title>実用英語技能検定 3級 <Badge colorPalette="green">CEFR-A1</Badge></Timeline.Title>
+                <Timeline.Description>Jul 2025</Timeline.Description>
               </Timeline.Content>
             </Timeline.Item>
             <Timeline.Item>
@@ -138,7 +150,7 @@ function App() {
               </Timeline.Connector>
               <Timeline.Content>
                 <Timeline.Title>JOI'25 日本情報オリンピック<Badge colorPalette="blue">2次予選 Bランク</Badge></Timeline.Title>
-                <Timeline.Description>Decenber 2025</Timeline.Description>
+                <Timeline.Description>Dec 2025</Timeline.Description>
               </Timeline.Content>
             </Timeline.Item>
             <Timeline.Item>
@@ -149,8 +161,8 @@ function App() {
                   </Timeline.Indicator>
               </Timeline.Connector>
               <Timeline.Content>
-                <Timeline.Title>JGeO'26 科学地理オリンピック日本選手権<Badge colorPalette="blue">1次予選敗退</Badge></Timeline.Title>
-                <Timeline.Description>Decenber 2025</Timeline.Description>
+                <Timeline.Title>JGeO'26 科学地理オリンピック日本選手権<Badge colorPalette="green">1次予選敗退</Badge></Timeline.Title>
+                <Timeline.Description>Feb 2025</Timeline.Description>
               </Timeline.Content>
             </Timeline.Item>
             <Timeline.Item>
@@ -166,7 +178,7 @@ function App() {
               </Timeline.Connector>
               <Timeline.Content>
                 <Timeline.Title>高等学校入学</Timeline.Title>
-                <Timeline.Description>April 2026 - Now</Timeline.Description>
+                <Timeline.Description>Apr 2026 - Now</Timeline.Description>
               </Timeline.Content>
             </Timeline.Item>
             <Timeline.Item>
@@ -177,8 +189,8 @@ function App() {
                   </Timeline.Indicator>
               </Timeline.Connector>
               <Timeline.Content>
-                <Timeline.Title>実用英語技能検定 2級 <Badge colorPalette="teal">CEFR-B1</Badge></Timeline.Title>
-                <Timeline.Description>July 2026</Timeline.Description>
+                <Timeline.Title>実用英語技能検定 2級 <Badge colorPalette="blue">CEFR-B1</Badge></Timeline.Title>
+                <Timeline.Description>Jul 2026</Timeline.Description>
               </Timeline.Content>
             </Timeline.Item>
             <Timeline.Item>
@@ -187,22 +199,40 @@ function App() {
             </Timeline.Item>
           </Timeline.Root>
 
+        <Heading size="2xl" mb={2}>Links</Heading>
+        <Text mb={4} textStyle={"md"}>
+            ご連絡は Twitter か Misskey までおねがいします
+        </Text>
+        <List.Root gap="2" variant="plain" align="center" mb={"4"}>
+          <List.Item>
+            <List.Indicator asChild color="pink.600">
+              <LuBird />
+            </List.Indicator>
+            Twitter <Link href="https://twitter.com/shtermem" target="_blank" rel="noopener noreferrer" color="pink.600" _hover={{ color: "pink.600.500" }} ml='1' mr='1'>
+              @shtermem
+            </Link>
+          </List.Item>
+          <List.Item>
+            <List.Indicator asChild color="pink.600">
+              <LuCat />
+            </List.Indicator>
+            Github <Link href="https://twitter.com/shtermem" target="_blank" rel="noopener noreferrer" color="pink.600" _hover={{ color: "pink.600.500" }} ml='1' mr='1'>
+              /shtermem
+            </Link>
+          </List.Item>
+          <List.Item>
+            <List.Indicator asChild color="pink.600">
+              <LuHandshake />
+            </List.Indicator>
+            Misskey <Link href="https://twitter.com/shtermem" target="_blank" rel="noopener noreferrer" color="pink.600" _hover={{ color: "pink.600.500" }} ml='1' mr='1'>
+              @shtermem@misskey.io
+            </Link>
+          </List.Item>
+        </List.Root>
+
       </Container>
     </Box>
   )
 }
-
-const whatIwanttoDo = [
-  { id: 1, name: "地理学・都市工学", category: "昔から地図を見るのが好きです。JGeO'26 出てました"},
-  { id: 2, name: "分散型プロトコル", category: "一時期 ActivityPub とか流行ったころに知りました。セルフホストしてみたい"},
-  { id: 3, name: "競技プログラミング", category: "JOI'25 がきっかけです。暇ができたらやりたいです"},
-]
-
-const whatIcanDo = [
-  { id: 1, name: "🇯🇵 日本語", category: "ネイティブです 一応"},
-  { id: 2, name: "🇬🇧 English", category: "CEFR-B1 です"},
-  { id: 3, name: "プログラミング", category: "Golang が好きです。TypeScript と Dart も書くことがあります"},
-  { id: 4, name: "グラフィックデザイン", category: "Inkscape と Affinity が使えます。Adobe のライセンスがほしいです"},
-]
 
 export default App
