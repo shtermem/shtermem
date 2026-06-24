@@ -216,7 +216,7 @@ function App() {
             <List.Indicator asChild color="pink.600">
               <LuCat />
             </List.Indicator>
-            Github <Link href="https://twitter.com/shtermem" target="_blank" rel="noopener noreferrer" color="pink.600" _hover={{ color: "pink.600.500" }} ml='1' mr='1'>
+            Github <Link href="https://github.com/shtermem" target="_blank" rel="noopener noreferrer" color="pink.600" _hover={{ color: "pink.600.500" }} ml='1' mr='1'>
               /shtermem
             </Link>
           </List.Item>
@@ -224,7 +224,7 @@ function App() {
             <List.Indicator asChild color="pink.600">
               <LuHandshake />
             </List.Indicator>
-            Misskey <Link href="https://twitter.com/shtermem" target="_blank" rel="noopener noreferrer" color="pink.600" _hover={{ color: "pink.600.500" }} ml='1' mr='1'>
+            Misskey <Link href="https://misskey.io/@shtermem" target="_blank" rel="noopener noreferrer" color="pink.600" _hover={{ color: "pink.600.500" }} ml='1' mr='1'>
               @shtermem@misskey.io
             </Link>
           </List.Item>
