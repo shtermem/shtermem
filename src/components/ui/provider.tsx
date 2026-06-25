@@ -1,14 +1,28 @@
 "use client"
 
-import { ChakraProvider, defaultSystem } from "@chakra-ui/react"
+import { createSystem, defaultConfig, ChakraProvider } from "@chakra-ui/react"
 import {
   ColorModeProvider,
   type ColorModeProviderProps,
 } from "./color-mode"
+const system = createSystem(defaultConfig, {
+  theme: {
+    tokens: {
+      fonts: {
+        // 見出し用フォント
+        heading: { value: "'BIZ UDPGothic', system-ui, sans-serif" },
+        // 本文用フォント（見出しと同じでもOK）
+        body: { value: "'BIZ UDPGothic', system-ui, sans-serif" },
+        // コード用（必要に応じて変更）
+        mono: { value: "'JetBrains Mono', 'Fira Code', monospace" },
+      },
+    },
+  },
+})
 
 export function Provider(props: ColorModeProviderProps) {
   return (
-    <ChakraProvider value={defaultSystem}>
+    <ChakraProvider value={system}>
       <ColorModeProvider {...props} />
     </ChakraProvider>
   )

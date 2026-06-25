@@ -57,9 +57,10 @@ function App() {
           </Stack>
         </Stack>
 
-        <Heading size="2xl" mb={2}>About Me</Heading>
+        <Heading size="xl" mb={2}>こんにちは 👋</Heading>
           <Text mb={4} textStyle={"md"}>
-            高校生です。都市工学に興味があります。<br/>地理と Golang が好きです。理芽と Chevon をよく聴いています。
+            高校生です。多趣味です。物事への情熱は熱しやすく冷めやすいです。<br/>
+            都市工学に興味を持っています。好きなことは街歩きと旅行です。
           </Text>
 
         <Heading size="lg" mb={"2"}>Favorites</Heading>
@@ -126,7 +127,7 @@ function App() {
               </Timeline.Connector>
               <Timeline.Content>
                 <Timeline.Title>中学校入学</Timeline.Title>
-                <Timeline.Description>April 2023 - March 2026</Timeline.Description>
+                <Timeline.Description>Apr 2023 - Mar 2026</Timeline.Description>
               </Timeline.Content>
             </Timeline.Item>
             <Timeline.Item>
@@ -137,8 +138,8 @@ function App() {
                   </Timeline.Indicator>
               </Timeline.Connector>
               <Timeline.Content>
-                <Timeline.Title>実用英語技能検定 3級 <Badge colorPalette="green">CEFR-A1</Badge></Timeline.Title>
-                <Timeline.Description>Jul 2025</Timeline.Description>
+                <Timeline.Title>実用英語技能検定 3級</Timeline.Title>
+                <Timeline.Description>Jul 2025 <Badge colorPalette="green" ml='1' mr='1'>CEFR-A1</Badge></Timeline.Description>
               </Timeline.Content>
             </Timeline.Item>
             <Timeline.Item>
@@ -149,8 +150,8 @@ function App() {
                   </Timeline.Indicator>
               </Timeline.Connector>
               <Timeline.Content>
-                <Timeline.Title>JOI'25 日本情報オリンピック<Badge colorPalette="blue">2次予選 Bランク</Badge></Timeline.Title>
-                <Timeline.Description>Dec 2025</Timeline.Description>
+                <Timeline.Title>JOI'25 日本情報オリンピック</Timeline.Title>
+                <Timeline.Description>Dec 2025 <Badge colorPalette="blue" ml='1' mr='1'>2次予選 Bランク</Badge></Timeline.Description>
               </Timeline.Content>
             </Timeline.Item>
             <Timeline.Item>
@@ -161,8 +162,8 @@ function App() {
                   </Timeline.Indicator>
               </Timeline.Connector>
               <Timeline.Content>
-                <Timeline.Title>JGeO'26 科学地理オリンピック日本選手権<Badge colorPalette="green">1次予選敗退</Badge></Timeline.Title>
-                <Timeline.Description>Feb 2025</Timeline.Description>
+                <Timeline.Title>JGeO'26 科学地理オリンピック日本選手権</Timeline.Title>
+                <Timeline.Description>Feb 2025 <Badge colorPalette="green" ml='1' mr='1'>1次予選敗退</Badge></Timeline.Description>
               </Timeline.Content>
             </Timeline.Item>
             <Timeline.Item>
@@ -177,7 +178,9 @@ function App() {
                   </Timeline.Indicator>
               </Timeline.Connector>
               <Timeline.Content>
-                <Timeline.Title>高等学校入学</Timeline.Title>
+                <Timeline.Title>
+                  高等学校入学
+                </Timeline.Title>
                 <Timeline.Description>Apr 2026 - Now</Timeline.Description>
               </Timeline.Content>
             </Timeline.Item>
@@ -189,8 +192,8 @@ function App() {
                   </Timeline.Indicator>
               </Timeline.Connector>
               <Timeline.Content>
-                <Timeline.Title>実用英語技能検定 2級 <Badge colorPalette="blue">CEFR-B1</Badge></Timeline.Title>
-                <Timeline.Description>Jul 2026</Timeline.Description>
+                <Timeline.Title>実用英語技能検定 2級</Timeline.Title>
+                <Timeline.Description>Jul 2026 <Badge colorPalette="blue" ml='1' mr='1'>CEFR-B1</Badge></Timeline.Description>
               </Timeline.Content>
             </Timeline.Item>
             <Timeline.Item>
@@ -203,7 +206,7 @@ function App() {
         <Text mb={4} textStyle={"md"}>
             ご連絡は Twitter か Misskey までおねがいします
         </Text>
-        <List.Root gap="2" variant="plain" align="center" mb={"4"}>
+        <List.Root gap="2" variant="plain" align="center" mb={8}>
           <List.Item>
             <List.Indicator asChild color="pink.600">
               <LuBird />
@@ -229,6 +232,15 @@ function App() {
             </Link>
           </List.Item>
         </List.Root>
+
+        <Stack align="center" mb={4} textAlign="center">
+          
+          <Text fontSize="xs" color="fg.muted">
+            © 2026 shtermem, Built with React + Github Pages
+          </Text>
+          
+          
+        </Stack>
 
       </Container>
     </Box>
