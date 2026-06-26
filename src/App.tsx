@@ -10,7 +10,7 @@ import {
   Timeline,
   Badge,
   List} from '@chakra-ui/react';
-import { LuShieldCheck, LuGraduationCap, LuCrown, LuLanguages, LuSquareCode, LuMusic, LuChefHat, LuMapPin, LuActivity, LuAward, LuBird, LuCat, LuHandshake } from 'react-icons/lu';
+import { LuShieldCheck, LuGraduationCap, LuCrown, LuLanguages, LuSquareCode, LuBird, LuCat, LuHandshake, LuCircleCheck, LuBuilding2, LuCloud } from 'react-icons/lu';
 function App() {
 
   return (
@@ -49,7 +49,7 @@ function App() {
               Twitter
             </Link>
             <Link href="https://github.com/shtermem" target="_blank" rel="noopener noreferrer" color="pink.600" _hover={{ color: "pink.600.500" }}>
-              GitHub
+              Github
             </Link>
             <Link href="https://misskey.io/@shtermem" target="_blank" rel="noopener noreferrer" color="pink.600" _hover={{ color: "pink.500" }}>
               ActivityPub
@@ -60,60 +60,93 @@ function App() {
         <Heading size="xl" mb={2}>こんにちは 👋</Heading>
           <Text mb={4} textStyle={"md"}>
             高校生です。多趣味です。物事への情熱は熱しやすく冷めやすいです。<br/>
-            都市工学に興味を持っています。好きなことは街歩きと旅行です。
+            どさんこですが寒がりです。<br/>
+            最近ギターを始めました。Fコードが押さえられません。
           </Text>
 
-        <Heading size="lg" mb={"2"}>Favorites</Heading>
+          <Heading size="lg" mb={"2"}>Skills</Heading>
+          <List.Root gap="2" variant="plain" align="center" mb={"4"}>
+            <List.Item>
+              <List.Indicator asChild color="pink.600">
+                <LuLanguages />
+              </List.Indicator>
+              Japanese <Badge colorPalette="pink" ml='1' mr='1'>Native</Badge> , English <Badge colorPalette="blue" ml='1' mr='1'>CEFR-B1</Badge> , Chinese <Badge colorPalette="gray" ml='1' mr='1'>Beginner</Badge>
+            </List.Item>
+            <List.Item>
+              <List.Indicator asChild color="pink.600">
+                <LuSquareCode />
+              </List.Indicator>
+              Golang, Dart/Flutter, TypeScript
+            </List.Item>
+          </List.Root>
+
+        <Heading size="lg" mb={"2"}>Interests</Heading>
         <List.Root gap="2" variant="plain" align="center" mb={"4"}>
           <List.Item>
             <List.Indicator asChild color="pink.600">
-              <LuMusic />
+              <LuBuilding2 />
             </List.Indicator>
-            Chevon, 理芽, 笹川真生, Penthouse, 東京事変
+            都市工学, 土木工学
           </List.Item>
           <List.Item>
             <List.Indicator asChild color="pink.600">
-              <LuChefHat />
+              <LuCloud />
             </List.Indicator>
-            らーめん, あまいもの, 紅茶, コーヒー
+            インターネット技術 - ブロックチェーンなど
           </List.Item>
           <List.Item>
             <List.Indicator asChild color="pink.600">
-              <LuMapPin />
+              <LuShieldCheck />
             </List.Indicator>
-            自宅のふとん, 札幌, 京都
-          </List.Item>
-          <List.Item>
-            <List.Indicator asChild color="pink.600">
-              <LuActivity />
-            </List.Indicator>
-            自転車, 街歩き, 登山, 旅行, プログラミング (Web)
-          </List.Item>
-          <List.Item>
-            <List.Indicator asChild color="pink.600">
-              <LuAward/>
-            </List.Indicator>
-            北海道日本ハムファイターズ, Los Angeles Angels, VARREL 
+            資格取得 - 英検準1級, 基本情報技術者 など
           </List.Item>
         </List.Root>
 
-        <Heading size="lg" mb={"2"}>Skills</Heading>
+        <Heading size="lg" mb={"2"}>Favorites Activity</Heading>
         <List.Root gap="2" variant="plain" align="center" mb={"4"}>
           <List.Item>
             <List.Indicator asChild color="pink.600">
-              <LuLanguages />
+              <LuCircleCheck />
             </List.Indicator>
-            Japanese <Badge colorPalette="red" ml='1' mr='1'>Native</Badge> , English <Badge colorPalette="blue" ml='1' mr='1'>CEFR-B1</Badge> , Chinese <Badge colorPalette="green" ml='1' mr='1'>Beginner</Badge>
+            紅茶
           </List.Item>
           <List.Item>
             <List.Indicator asChild color="pink.600">
-              <LuSquareCode />
+              <LuCircleCheck />
             </List.Indicator>
-            Golang, Dart/Flutter, TypeScript
+            自転車
+          </List.Item>
+          <List.Item>
+            <List.Indicator asChild color="pink.600">
+              <LuCircleCheck />
+            </List.Indicator>
+            ギター - 最近はじめました
           </List.Item>
         </List.Root>
 
-          <Heading size="lg" mb={"2"}>Pasts</Heading>
+        <Heading size="lg" mb={"2"}>Favorites Artists</Heading>
+        <List.Root gap="2" variant="plain" align="center" mb={"4"}>
+          <List.Item>
+            <List.Indicator asChild color="pink.600">
+              <LuCircleCheck />
+            </List.Indicator>
+            Chevon
+          </List.Item>
+          <List.Item>
+            <List.Indicator asChild color="pink.600">
+              <LuCircleCheck />
+            </List.Indicator>
+            理芽
+          </List.Item>
+          <List.Item>
+            <List.Indicator asChild color="pink.600">
+              <LuCircleCheck />
+            </List.Indicator>
+            笹川真生
+          </List.Item>
+        </List.Root>
+
+        <Heading size="lg" mb={"2"}>Pasts</Heading>
           <Text textStyle={"sm"} mb={4}>
           </Text>
 
@@ -139,7 +172,7 @@ function App() {
               </Timeline.Connector>
               <Timeline.Content>
                 <Timeline.Title>実用英語技能検定 3級</Timeline.Title>
-                <Timeline.Description>Jul 2025 <Badge colorPalette="green" ml='1' mr='1'>CEFR-A1</Badge></Timeline.Description>
+                <Timeline.Description>Jul 2025 <Badge colorPalette="gray" ml='1' mr='1'>CEFR-A1</Badge></Timeline.Description>
               </Timeline.Content>
             </Timeline.Item>
             <Timeline.Item>
@@ -163,12 +196,8 @@ function App() {
               </Timeline.Connector>
               <Timeline.Content>
                 <Timeline.Title>JGeO'26 科学地理オリンピック日本選手権</Timeline.Title>
-                <Timeline.Description>Feb 2025 <Badge colorPalette="green" ml='1' mr='1'>1次予選敗退</Badge></Timeline.Description>
+                <Timeline.Description>Feb 2025 <Badge colorPalette="gray" ml='1' mr='1'>1次予選敗退</Badge></Timeline.Description>
               </Timeline.Content>
-            </Timeline.Item>
-            <Timeline.Item>
-              <Timeline.Connector>
-              </Timeline.Connector>
             </Timeline.Item>
             <Timeline.Item>
               <Timeline.Connector>
@@ -181,7 +210,7 @@ function App() {
                 <Timeline.Title>
                   高等学校入学
                 </Timeline.Title>
-                <Timeline.Description>Apr 2026 - Now</Timeline.Description>
+                <Timeline.Description>Apr 2026 - <strong>Now</strong> - Mar 2029 (Expected)</Timeline.Description>
               </Timeline.Content>
             </Timeline.Item>
             <Timeline.Item>
@@ -195,10 +224,6 @@ function App() {
                 <Timeline.Title>実用英語技能検定 2級</Timeline.Title>
                 <Timeline.Description>Jul 2026 <Badge colorPalette="blue" ml='1' mr='1'>CEFR-B1</Badge></Timeline.Description>
               </Timeline.Content>
-            </Timeline.Item>
-            <Timeline.Item>
-              <Timeline.Connector>
-              </Timeline.Connector>
             </Timeline.Item>
           </Timeline.Root>
 
