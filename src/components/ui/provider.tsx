@@ -10,9 +10,9 @@ const system = createSystem(defaultConfig, {
     tokens: {
       fonts: {
         // 見出し用フォント
-        heading: { value: "'BIZ UDPGothic', system-ui, sans-serif" },
+        heading: { value: "'Zen Maru Gothic', system-ui, sans-serif" },
         // 本文用フォント（見出しと同じでもOK）
-        body: { value: "'BIZ UDPGothic', system-ui, sans-serif" },
+        body: { value: "'Zen Maru Gothic', system-ui, sans-serif" },
         // コード用（必要に応じて変更）
         mono: { value: "'JetBrains Mono', 'Fira Code', monospace" },
       },
